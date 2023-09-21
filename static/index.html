@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" href="/assets/img/doge.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="title" content="Nova Browser" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <link rel="stylesheet" href="/assets/css/app.css">
+  <link rel="stylesheet" href="/assets/css/rightclick.css">
+  <link href="https://unpkg.com/movement.css/movement.css" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/323255fd4e.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/script.js/2.0.2/script.min.js" integrity="sha512-UWtTDM6wtl/qutDD6i1JOGZGiEd92dveVzuLl8sMBkMHlOHcbZdexM7ZrKkeaugW7vhqDnWc2pPD/ohEV+BBbg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script>
+    var pagetitle = "Home | Nova";
+    var newTitle = "Home | Nova";
+    
+    const storedTitle = localStorage.getItem('tabTitle');  
+    if (storedTitle === "Home | Doge") {
+      localStorage.setItem('tabTitle', newTitle);
+    } else if (storedTitle === "Gms | Doge") {
+      localStorage.setItem('tabTitle', newTitle);
+      document.title = "Gms | Doge";
+    } else if (storedTitle === "Apps | Doge") {
+      localStorage.setItem('tabTitle', newTitle);
+    } else if (storedTitle === "Loader | Doge") {
+      localStorage.setItem('tabTitle', newTitle);
+    } else if (storedTitle === "404 | Doge") {
+      localStorage.setItem('tabTitle', newTitle);
+    } else {
+      document.title = "My Drive - Google Drive";
+    }
+
+    document.title = pagetitle;
+  </script>
+  <style>
+    html,
+    body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      padding: 16px;
+    }
+
+    .search-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
+    .form__input {
+      width: 300px;
+      padding: 10px;
+      font-size: 18px;
+      background-color: transparent;
+      border: none;
+      border-bottom: 2px solid #fff;
+      color: #fff;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    .form__input:hover,
+    .form__input:focus {
+      border-color: #fff;
+    }
+
+    .footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .footer a {
+      margin: 0 8px;
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+    }
+  </style>
+  <script src="/assets/js/rightclick.js"></script>
+  <script src="/assets/js/cloakcheck.js"></script>
+  <script src="/assets/js/mobile.js"></script>
+  <script>
+    var loginValue = localStorage.getItem('login');
+
+    if (loginValue === 'enablelogin') {
+      var isLoggedIn = localStorage.getItem('pass');
+
+      if (isLoggedIn === 'correct') {
+        console.log("User has successfully logged in.");
+      } else {
+        console.log('User has attempted to bypass login screen. Redirecting.');
+        location.href = '/';
+      }
+    } else {
+      console.log("Login is not enabled.");
+    }
+  </script>
+  <title>Home | Nova</title>
+</head>
+
+<body>
+  <div id="contextMenu" class="context-menu">
+    <div class="context-menu-item with-submenu" onclick="toggleSubmenu(event)">Tab Cloak</div>
+    <div class="context-submenu">
+      <div class="context-menu-item" onclick="tabCloak()">Enable</div>
+      <div class="context-menu-item" onclick="disableTabCloak()">Disable</div>
+    </div>
+    <div class="context-menu-item with-submenu" onclick="toggleSubmenu2(event)">Authentication</div>
+    <div class="context-submenu">
+      <div class="context-menu-item" onclick="enableLogin()">Enable Login</div>
+      <div class="context-menu-item" onclick="disableLogin()">Disable Login</div>
+    </div>
+    <div class="context-menu-item" onclick="openWindow()">About:Blank Cloak</div>
+    <div class="context-menu-item" onclick="visitLastSite()">Visit Last Site</div>
+  </div>
+
+  <nav id="mytopnav">
+    <br>
+    <a href="/gms/"><button class="button-6">Games</button></a>
+    <a href="/apps/"><button class="button-6" class="fa-solid fa-user">Apps</button></a>
+    <a href="/app"><button class="button-6">Launcher</button></a>
+  </nav>
+
+  <div class="container">
+    <div class="search-form">
+      <form id="searchbar">
+        <input type="text" name="url" class="form__input" id="name" tag="searchbar" style="font-family:poppins;font-size:20px;" placeholder="Search free!">
+      </form>
+      <p style="font-size:14px;">This was made not to create problems, this was made to keep students having fun durring there free time... </p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <a href="#">&copy; 2023 Nova Helper</a>
+    <a href="yolo.com" target="_blank">Coming soon...</a>
+    <a href="yolo.com" target="_blank">Coming soon...</a>
+    <a href="/tc">Terms of Service</a>
+    <a href="/privacy">Privacy Policy</a>
+  </footer>
+</body>
+</html>
